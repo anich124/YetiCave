@@ -1,20 +1,20 @@
 <?php
 
 
-    require_once('data.php');
-    require_once('functions.php');
-    require_once('helpers.php')
+require_once('data.php');
+require_once('functions.php');
+require_once('helpers.php');
 
-    $page_content = include_template("main.php", [
-   "categories" => $categories,
-   "goods" => $goods
-    ]);
+$page_content = include_template("main.php", [
+    "categories" => $categories,
+    "goods" => $goods
+]);
     
-    $layout_content = include_template("layout.php", [
-   "content" => $page_content,
-   "categories" => $categories,
-   "title" => "Главная"
-    ]);
+$layout_content = include_template("layout.php", [
+    "content" => $page_content,
+    "categories" => $categories,
+    "title" => "Главная"
+]);
 
-    print($layout_content);
+print($layout_content);
 

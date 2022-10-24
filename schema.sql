@@ -9,6 +9,7 @@ USE yeticave;
 
 CREATE TABLE categories ( 
 	category_id INT PRIMARY KEY AUTO_INCREMENT,
+	character_code VARCHAR(128) UNIQUE,
 	name_category VARCHAT(50)
 );
 
@@ -28,7 +29,11 @@ CREATE TABLE users (
 	email VARCHAR(30),
 	user_name VARCHAR(30),
 	password CHAR(256),
-	contacts TEXT
+	contacts TEXT,
+	lots_id,
+	bets_id
+	FOREING KEY (lots_id) REFERENCES lots(lots_id),
+	FOREING KEY(bets_id) REFERENCES bets(bets_id)
 );
 
 CREATE TABLE lots(
@@ -36,7 +41,7 @@ CREATE TABLE lots(
 	date_creation DATETIME,
 	title VARCHAR(128),
 	lot_discription TEXT,
-	lot_image VARCHR(128),
+	lot_image VARCHAR(128),
 	start_price DECIMAL(8, 2),
 	date_finish DATE,
 	step INT,
@@ -46,4 +51,14 @@ CREATE TABLE lots(
 	FOREING KEY (user_id) REFERENCES users(user_id),
 	FOREING KEY (winner_id) REFERENCES users(user_id),
 	FOREING KEY (caregory_id) REFERENCES categories(caregory_id)
+);
+
+CREATE TABLE bets (
+	bets_id INT PRIMARY KEY AUTO_INCREMENT,
+	date_bet DATETIME,
+	price_bet DECIMAL(8, 2),
+	user_id,
+	lots_id,
+	FOREING KEY(user_id) REFERENCES users(user_id),
+	FOREING KEY(lots_id) REFERENCES lots(lots_id)
 );

@@ -13,19 +13,10 @@ CREATE TABLE categories (
 	name_category VARCHAT(50)
 );
 
-INSERT INTO categories (название)
-VALUE
-("Доски и лыжи (boards)"),
-("Крепления (attachment)"),
-("Ботинки (boots)"),
-("Одежда (clothing)"),
-("Инструменты (tools)"),
-("Разное (other)"
-);
 
 CREATE TABLE users (
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
-	date_of_registration DATETIME,
+	date_of_registration DATE,
 	email VARCHAR(30),
 	user_name VARCHAR(30),
 	password CHAR(256),

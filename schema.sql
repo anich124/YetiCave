@@ -19,12 +19,8 @@ CREATE TABLE users (
 	date_of_registration DATE,
 	email VARCHAR(30),
 	user_name VARCHAR(30),
-	password CHAR(255),
-	contacts TEXT,
-	lots_id INT,
-	bets_id INT,
-	FOREIGN KEY (lots_id) REFERENCES lots(lots_id),
-	FOREIGN KEY(bets_id) REFERENCES bets(bets_id)
+	user_password CHAR(255),
+	contacts TEXT
 );
 
 CREATE TABLE lots(
@@ -41,7 +37,7 @@ CREATE TABLE lots(
 	category_id INT,
 	FOREIGN KEY (user_id) REFERENCES users(user_id),
 	FOREIGN KEY (winner_id) REFERENCES users(user_id),
-	FOREIGN KEY (caregory_id) REFERENCES categories(caregory_id)
+	FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
 CREATE TABLE bets (

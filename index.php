@@ -6,14 +6,15 @@ require_once('functions.php');
 require_once('helpers.php');
 
 
-$con = mysqli_connect("localhost", "root", "root", "yeticave");
-if ($con == false) {
+
+/*$link = mysqli_connect("localhost", "root", "root", "yeticave");
+if ($link == false) {
    print("Ошибка подключения: " . mysqli_connect_error());
 }
 else {
    print("Соединение установлено");
     
-}
+}*/
 
 
 $page_content = include_template("main.php", [

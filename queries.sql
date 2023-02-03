@@ -1,24 +1,13 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 INSERT INTO categories (character_code, name_category)
 VALUES
 ("boards", "Доски и лыжи"),
 ("attachment", "Крепления"),
 ("boots", "Ботинки"),
 ("clothing", "Одежда"),
-<<<<<<< HEAD
 ("tools", "Инструменты"),
 ("other", "Разное");
 
 INSERT INTO users (date_of_registration, email, user_name, user_password, contacts)
-=======
-("tools"; "Инструменты"),
-("other", "Разное");
-
-INSERT INTO users (date_of_registration, email, user_name, password, contacts)
->>>>>>> master
 VALUES
 	("2022-07-09", "123@bk.ru", "Кирилл", "qwert123", "+79999999999"),
 	("2022-09-13", "321@bk.ru", "Иосиф", "qwer321", "+78888888888");
@@ -26,14 +15,21 @@ VALUES
 INSERT INTO lots
 	(date_creation,	title, lot_discription, lot_image, start_price, date_finish, step, user_id, category_id)
 VALUES
-<<<<<<< HEAD
 	("2022-06-05", "2014 Rossignol District Snowboard", "Самый быстрый сноубод", "img/lot-1.jpg", 10999, "2022-10-20", 100, 1, 1),
 	("2022-03-11", "DC Ply Mens 2016/2017 Snowboard", "Самый красивый сноуборд", "img/lot-2.jpg", 159999, "2022-10-21", 300, 2, 1),
 	("2022-07-01", "Крепления Union Contact Pro 2015 года размер L/XL", "Отличные крепления", "img/lot-3.jpg", 8000, "2022-10-22", 150, 1, 2),
 	("2022-05-07", "Ботинки для сноуборда DC Mutiny Charocal", "Ботинки путешественника", "img/lot-4.jpg", 10999, "2022-10-23", 100, 2, 3),
 	("2022-02-25", "Куртка для сноуборда DC Mutiny Charocal", "Непродуваемая куртка", "img/lot-5.jpg", 7500, "2022-10-30", 500, 1, 4),
-	("2022-02-25", "Маска Oakley Canopy", "Маска лыжника", "img/lot-6.jpg", 5400, "2022-10-13 16:20", 200, 2, 6)
+	("2022-02-25", "Маска Oakley Canopy", "Маска лыжника", "img/lot-6.jpg", 5400, "2022-10-13 16:20", 200, 2, 6);
 
+INSERT INTO bets
+	(price_bet, user_id, lots_id)
+VALUES
+	(8500, 1, 4);
+INSERT INTO bets
+	(price_bet, user_id, lots_id)
+VALUES
+	(9000, 1, 4);
 
 -- получить все категории
 SELECT name_category
@@ -63,6 +59,3 @@ INNER JOIN lots ON bets.lots_id = lots.lots_id
 INNER JOIN users ON bets.user_id = users.user_id
 WHERE bets.lots_id = 3
 ORDER BY  bets.date_bet;
-=======
-	("2022-06-05 22:07", "2014 Rossignol District Snowboard", "Самый быстрый сноубод", "img/lot-1.jpg", 10999, "2022-10-20", 100, 1, 1),
->>>>>>> master
